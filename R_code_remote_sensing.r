@@ -51,3 +51,64 @@ plot(l2011$B2_sre, col = clg)
 par(mfrow = c(2,1))
 plot(l2011$B1_sre, col = clb)
 plot(l2011$B2_sre, col = clg)
+
+----------------------------------------------------- Day 3 ----------------------------------------------------------------------
+
+plot(l2011$B1_sre)
+
+# to change the color palette, use the function colorRampPalette() 
+clb <- colorRampPalette(c("dark blue", "blue", "light blue"))(100)
+plot(l2011$B1_sre, col = clb)
+
+clg <- colorRampPalette(c("dark green", "green", "light green"))(100)
+plot(l2011$B2_sre, col = clg)
+
+# to plot two images in just one multiframe graph, use the function par() stablishing the order of the graph you want
+par(mfrow = c(1,2))
+plot(l2011$B1_sre, col = clb)
+plot(l2011$B_sre, col = clg)
+
+# Exercise: Invert the number of rows and the number of columns
+par(mfrow = c(2,1))
+plot(l2011$B1_sre, col = clb)
+plot(l2011$B2_sre, col = clg)
+
+# Exercise: plot the first four bands with two rows and two columns
+
+clb <- colorRampPalette(c("dark blue", "blue", "light blue"))(100)
+plot(l2011$B1_sre, col = clb)
+
+clg <- colorRampPalette(c("dark green", "green", "light green"))(100)
+plot(l2011$B2_sre, col = clg)
+
+clr <- colorRampPalette(c("dark red", "red", "pink"))(100)
+plot(l2011$B3_sre, col = clr)
+
+clnir <- colorRampPalette(c("red", "orange", "yellow"))(100)
+plot(l2011$B4_sre, col = clnir)
+
+par(mfrow = c(2,2))
+plot(l2011$B1_sre, col = clb)
+plot(l2011$B2_sre, col = clg)
+plot(l2011$B3_sre, col = clr)
+plot(l2011$B4_sre, col = clnir)
+
+# to close a plotting device, use the function dev.off()
+dev.off()
+
+# to associate the bands to colours, use the function plotRGB(x, r=1, g=2, g=3)
+plotRGB(l2011, r=3, g=2, b=1, stretch="Lin") # Natural Colours
+
+# Exercise: change the order of the RGB components
+plotRGB(l2011, r=4, g=3, b=2, stretch="Lin") # False Colours
+
+plotRGB(l2011, r=3, g=4, b=2, stretch="Lin")# False Colours
+
+plotRGB(l2011, r=3, g=2, b=4, stretch="Lin")# False Colours
+
+# Exercise: plot the four images in one multiframe graph
+par(mfrow = c(2,2))
+plotRGB(l2011, r=3, g=2, b=1, stretch="Lin")
+plotRGB(l2011, r=4, g=3, b=2, stretch="Lin")
+plotRGB(l2011, r=3, g=4, b=2, stretch="Lin")
+plotRGB(l2011, r=3, g=2, b=4, stretch="Lin")
