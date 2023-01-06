@@ -112,3 +112,20 @@ plotRGB(l2011, r=3, g=2, b=1, stretch="Lin")
 plotRGB(l2011, r=4, g=3, b=2, stretch="Lin")
 plotRGB(l2011, r=3, g=4, b=2, stretch="Lin")
 plotRGB(l2011, r=3, g=2, b=4, stretch="Lin")
+
+----------------------------------------------------------Day 4--------------------------------------------------
+
+plotRGB(l2011, r=4, g=3, b=2, stretch="Lin")
+plotRGB(l2011, r=4, g=3, b=2, stretch="Hist")
+
+# to import past data (1988), use the function brick()
+l1988 <- brick("p224r63_1988_masked.grd")
+
+par(mfrow = c(2,1))
+plotRGB(l1988, r=4, g=3, b=2, stretch="Lin")
+plotRGB(l2011, r=4, g=3, b=2, stretch="Lin")
+
+# Exercise: put the NIR en the blue channel
+par(mfrow = c(2,1))
+plotRGB(l1988, r=2, g=3, b=4, stretch="Lin")
+plotRGB(l2011, r=2, g=3, b=4, stretch="Lin")
