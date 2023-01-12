@@ -10,6 +10,7 @@ setwd("D:/DATA/Desktop/Maestria/Monitoring/Lab")
 #importing the data
 l1992 <- brick("defor1_.jpg") # image of 1992
 l1992
+
 # Bands: defor1__1, defor1__2, defor1__3
 
 # plotRGB
@@ -22,3 +23,19 @@ plotRGB(l1992, r = 1, g = 2, b = 3, stretch = "Lin")
 plotRGB(l1992, r = 2, g = 1, b = 3, stretch = "Lin")
 
 plotRGB(l1992, r = 2, g = 3, b = 1, stretch = "Lin")
+
+--------------------------------------------------------------Day 2-------------------------------------------------
+
+l2006 <- brick("defor2_.jpg") # image of 2006
+
+#plotRGB
+plotRGB(l2006, r = 1, g = 2, b = 3, stretch = "Lin")
+
+# defor1__1 = NIR
+# defor1__2 = red
+# defor1__3 = green
+
+# to plot two images in just one multiframe graph, use the function par()
+par(mfrow = c(2,1))
+plotRGB(l1992, r = 1, g = 2, b = 3, stretch = "Lin")
+plotRGB(l2006, r = 1, g = 2, b = 3, stretch = "Lin")
