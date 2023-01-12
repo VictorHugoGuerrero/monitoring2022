@@ -31,11 +31,34 @@ l2006 <- brick("defor2_.jpg") # image of 2006
 #plotRGB
 plotRGB(l2006, r = 1, g = 2, b = 3, stretch = "Lin")
 
-# defor1__1 = NIR
-# defor1__2 = red
-# defor1__3 = green
+# defor2__1 = NIR
+# defor2__2 = red
+# defor2__3 = green
 
-# to plot two images in just one multiframe graph, use the function par()
+# to plot a multiframe graph, 1992 over 2006, use the function par()
 par(mfrow = c(2,1))
 plotRGB(l1992, r = 1, g = 2, b = 3, stretch = "Lin")
 plotRGB(l2006, r = 1, g = 2, b = 3, stretch = "Lin")
+
+# specifying a color scheme
+cl <- colorRampPalette(c("Dark blue", "yellow", "red", "black"))(100)
+
+# Energy in 1992
+dvi1992 <- l1992$defor1__1 - l1992$defor1__2
+plot(dvi1992, col = cl)
+
+# calculate energy in 2006
+dvi2006 <- l2006$defor2__1 - l2006$defor2__2
+plot(dvi2006, col = cl)
+
+# differencin 2 images of energy in 2 different times
+dvidif <- dvi1992 - dvi2006
+
+# specifying new color scheme
+cld <- colorRampPalette(c("blue", "white", "red"))(100)
+plot(dvidif, col = cld)
+
+# plotting the difference of dvi
+plot(dvidif, col = cld)
+
+# final plot ==
