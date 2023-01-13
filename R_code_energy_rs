@@ -56,9 +56,29 @@ dvidif <- dvi1992 - dvi2006
 
 # specifying new color scheme
 cld <- colorRampPalette(c("blue", "white", "red"))(100)
-plot(dvidif, col = cld)
 
 # plotting the difference of dvi
 plot(dvidif, col = cld)
 
-# final plot ==
+# final plot: original images, dvis, final dvi difference
+par(mfrow = c(3,2))
+plotRGB(l1992, r = 1, g = 2, b = 3, stretch = "Lin")
+plotRGB(l2006, r = 1, g = 2, b = 3, stretch = "Lin")
+plot(dvi1992, col = cl)
+plot(dvi2006, col = cl)
+plot(dvidif, col = cld)
+
+# Save all the stuff in a pdf
+pdf("energy.pdf")
+par(mfrow = c(3,2))
+plotRGB(l1992, r = 1, g = 2, b = 3, stretch = "Lin")
+plotRGB(l2006, r = 1, g = 2, b = 3, stretch = "Lin")
+plot(dvi1992, col = cl)
+plot(dvi2006, col = cl)
+plot(dvidif, col = cld)
+
+pdf("dvi.pdf")
+par(mfrow = c(3,1))
+plot(dvi1992, col = cl)
+plot(dvi2006, col = cl)
+plot(dvidif, col = cld)
