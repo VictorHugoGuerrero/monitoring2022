@@ -2,12 +2,12 @@
 
 library(raster)
 
-setwd("D:/DATA/Desktop/Maestria/Monitoring/Lab")
+setwd("D:/DATA/Desktop/Maestria/Monitoring/Lab/EN")
 
 # To import the data, we're going to use the function brick() because we have single data.In this case, we are going to use the function raster().
 en01 <- raster("EN_0001.png")
 
-# plot the NO23 values of January 2020 by the cl palette
+# plot the NO23 values of January 2020 by the "cl" palette
 cl <- colorRampPalette(c("red", "orange", "yellow"))(100)
 plot(en01, col = cl)
 
@@ -57,7 +57,41 @@ EN <- stack(en01, en02, en03, en04, en05, en06, en07, en08, en09, en10, en11, en
 
 # Plot only the first image of the stack
 # Check the names of the layers
-plot(EN$en01)
+plot(EN$layer.1)
 
-#
+#PlotRGB
 plotRGB(EN, r = 1, g = 7, b = 13, stretch = "lin")
+
+----------------------------------------------------------------------Day 2------------------------------------------
+
+library(raster)
+
+setwd("D:/DATA/Desktop/Maestria/Monitoring/Lab/EN")
+
+# Import all the data together, without doing it one by one.
+# lapply is a function that gives a function to a list or to a vector. So to use this function it is required to create a list first of all
+rlist <- list.files(pattern = "EN")
+rlist
+
+list_rast <- lapply(rlist, raster)
+
+#Now that the files were imported, we need to stack them together
+EN_stack <- stack(list_rast)
+EN_stack
+
+# plot the stack by the "cl" palette
+cl <- colorRampPalette(c("red", "orange", "yellow"))(100)
+plot(EN_stack, col = cl)
+
+# Exercise: plot the first image of the stack
+plot(EN_stack$layer.1, col = cl)
+
+# difference
+ENdif <- EN_stack$layer.1 -EN_stack$layer.13
+cldif <- colorRampPalette(c("blue", "white", "red"))(100)
+plot(ENdif, col = cldif)
+
+# automated processing source function
+# do it in Notepad, and save it without extension (.txt)
+source("R_code_automatic_script.txt")
+
