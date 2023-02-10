@@ -92,6 +92,7 @@ cldif <- colorRampPalette(c("blue", "white", "red"))(100)
 plot(ENdif, col = cldif)
 
 # automated processing source function
+# read a code from a file
 # do it in Notepad, and save it without extension (.txt)
 source("R_code_automatic_script.txt")
 
