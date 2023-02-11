@@ -7,7 +7,7 @@ setwd("D:/DATA/Desktop/Maestria/Monitoring/Lab")
 
 # brick
 # 1 list the files available
-rlist <- lsit.files(pattern = "defor")
+rlist <- list.files(pattern = "defor")
 rlist
 
 # 2 lapply: apply a function to a list
@@ -24,8 +24,8 @@ l2006
 
 # defor bands:  NIR = 1, red = 2, green = 3
 
-plotRGB(l1992, r = 1, g = 2, r = 3, stretch = "lin")
-plotRGB(l2006, r = 1, g = 2, r = 3, stretch = "lin")
+plotRGB(l1992, r = 1, g = 2, b = 3, stretch = "lin")
+plotRGB(l2006, r = 1, g = 2, b = 3, stretch = "lin")
 
 # use a clasiffication to notice which parts are forests and which one are agricultural areas, Unsupervised classification.
 l1992c <- unsuperClass(l1992, nClasses = 2)
