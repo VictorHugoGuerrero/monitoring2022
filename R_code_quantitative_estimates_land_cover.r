@@ -15,7 +15,7 @@ rlist
 list_rast <- lapply(rlist, brick)
 list_rast
 
-# name each image
+# name each image, using the inlet of the list, without using $
 l1992 <- list_rast[[1]]
 l1992
 
@@ -28,6 +28,7 @@ plotRGB(l1992, r = 1, g = 2, b = 3, stretch = "lin")
 plotRGB(l2006, r = 1, g = 2, b = 3, stretch = "lin")
 
 # use a clasiffication to notice which parts are forests and which one are agricultural areas, Unsupervised classification.
+# iterative process, so the results may differ from one to another
 l1992c <- unsuperClass(l1992, nClasses = 2)
 l1992c
 plot(l1992c$map)
