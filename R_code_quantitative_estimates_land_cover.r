@@ -6,7 +6,7 @@ library(gridExtra) # we will use this package for multiframe ggplot
 setwd("D:/DATA/Desktop/Maestria/Monitoring/Lab")
 
 # brick
-# 1 list the files available
+# 1 list the files available in a file
 rlist <- list.files(pattern = "defor")
 rlist
 
