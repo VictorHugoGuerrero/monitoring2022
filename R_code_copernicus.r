@@ -67,7 +67,7 @@ p1 / p2
 # Crop the image
 # longitude from -80 to -60
 # latitude from 0 to -20
-ext <- c(-80, -60, 0, -20)
+ext <- c(-80, -60, -20, 0)
 crop_1999 <- crop(c1999, ext)
 crop_2018 <- crop(c2018, ext)
 
