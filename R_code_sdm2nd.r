@@ -22,7 +22,7 @@ absences$Occurrence
 # plot the presences in blue
 plot(presences, col = "blue", pch = 19)
 
-# plot the absences in red
+# plot the absences in red, it is use the function points() in order to add the new points to the previous graph.
 points(absences, col = "red", pch = 19)
 
 # Predictors
