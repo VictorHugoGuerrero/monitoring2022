@@ -183,6 +183,3 @@ p7 <- ggplot(Proportion, aes(x = nom, y = Niña, color = nom)) +
   theme(axis.title.x = element_blank())
 grid.arrange(p5, p6, p7, nrow = 1)
 
-
-pdf("bar_chart.pdf")
-grid.arrange(p5, p6, p7, nrow = 1)
